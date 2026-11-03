@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="zh-Hant"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'; worker-src 'none'">
+<title>NOVA 隔離式 HTML 預覽</title>
+<style>body{font:13px/1.8 system-ui;color:#657255;margin:12px;overflow-wrap:anywhere}img{max-width:100%}</style>
+</head><body><div id="preview">載入預覽中…</div>
+<script>
+// This page MUST be embedded with sandbox="allow-scripts" (never allow-same-origin).
+// It receives only the one review/search value, no session, cart, or personal data.
+let nonce = '';
+window.labProof = () => parent.postMessage({type:'nova-xss-proof',nonce}, '*');
+addEventListener('message', event => {
+  if (event.source !== parent || event.data?.type !== 'nova-render' || typeof event.data.html !== 'string') return;
+  nonce = event.data.nonce;
+  document.getElementById('preview').innerHTML = event.data.html; // INTENTIONAL XSS sink.
+});
+</script></body></html>

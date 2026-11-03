@@ -1,0 +1,9 @@
+{
+  "notice": "EDUCATIONAL FIXTURE. All values are fictional and grant no access to any service.",
+  "environment": "training-only",
+  "diagnostic_code": "NOVA-DEMO-2026",
+  "payment_api_key": "DEMO-ONLY-NOT-A-VALID-KEY",
+  "database_password": "DEMO-ONLY-NO-DATABASE",
+  "admin_path": "#/admin",
+  "build": "nova-lab-1.0.0"
+}

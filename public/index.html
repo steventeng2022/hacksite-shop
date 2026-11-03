@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="NOVA 選物：為日常挑選剛剛好的設計。提供 10 個可重設的購物平台資安教學情境，所有資料均為虛構。">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; frame-src 'self' about:; object-src 'none'; base-uri 'self'; form-action 'self'">
+  <title>NOVA 選物 | 讓日常，多一點喜歡</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./app.mjs"></script>
+</head>
+<body>
+  <a class="skip" href="#main">跳至主要內容</a>
+  <div class="announcement"><span>把好設計，帶進日常。</span><span>全館滿 NT$ 2,000 免運 <b>↗</b></span><span class="desktop-only">新會員享 9 折 · WELCOME10</span></div>
+  <header class="header">
+    <a href="#/" class="brand" aria-label="NOVA 選物首頁">nova<span class="brand-dot">✳</span><small>日 常 選 物</small></a>
+    <nav class="main-nav" aria-label="主要導覽"><a href="#/shop" data-nav="shop">所有商品</a><a href="#/shop?category=數位生活">數位生活</a><a href="#/shop?category=居家選物">居家選物</a><a href="#/shop?category=日常隨行">日常隨行</a><a href="#/shop?sort=new" class="new-nav">本週新品<span>NEW</span></a></nav>
+    <div class="header-tools"><button class="icon-button" data-action="search" aria-label="開啟搜尋" id="search-button"></button><a class="icon-button" href="#/account" aria-label="會員中心" id="account-icon"></a><a class="cart-button" href="#/cart" aria-label="購物車" id="cart-icon"></a></div>
+  </header>
+  <div class="search-bar" id="search-bar" hidden><form id="search-form"><label class="sr-only" for="search-input">搜尋商品</label><input id="search-input" name="q" placeholder="找一件讓生活更好的東西…" maxlength="1000"><button class="button dark" type="submit">搜尋 ↗</button></form></div>
+  <main id="main" tabindex="-1"></main>
+  <footer class="footer"><div class="footer-top"><div><a class="brand" href="#/">nova<span class="brand-dot">✳</span></a><p>少一點將就，多一點喜歡。<br>Good things, everyday.</p></div><div><h3>逛逛 NOVA</h3><a href="#/shop">所有商品</a><a href="#/shop?category=居家選物">居家選物</a><a href="#/orders">我的訂單</a></div><div><h3>服務資訊</h3><button data-action="info" data-info="shipping">運送與退換貨</button><button data-action="info" data-info="about">關於 NOVA</button><button data-action="lab">資安教學實驗室 ↗</button></div><div class="footer-note"><span class="eyebrow">BUILT FOR LEARNING</span><p>這是一間虛構的商店。<br>每一次探索，都是理解安全的開始。</p><span class="tiny">無真實交易 · 無真實個資 · 瀏覽器內練習</span></div></div><div class="footer-bottom"><span>© 2026 NOVA Shop · Security Education Project</span><span>Designed to be explored. Made to be understood.</span></div></footer>
+  <div class="lab-pill"><span class="status-dot"></span><span>教學環境</span><button data-action="lab">漏洞任務 <b id="lab-count">0/10</b> ↗</button></div>
+  <dialog id="lab-dialog" class="lab-dialog" aria-labelledby="lab-title"><div id="lab-content"></div></dialog>
+  <dialog id="info-dialog" class="info-dialog" aria-labelledby="info-title"><div id="info-content"></div></dialog>
+  <div id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

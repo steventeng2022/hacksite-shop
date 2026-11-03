@@ -1,0 +1,3 @@
+# A robots file is public documentation, not access control.
+User-agent: *
+Disallow: /hacksite-shop/debug/
